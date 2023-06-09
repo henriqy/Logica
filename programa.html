@@ -1,15 +1,29 @@
 <meta charset="UTF-8">
 
 <script>
+	
+	function pulaLinha(){
+		document.write("<br>")
+		document.write("<br>")
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		pulaLinha();
+	}
+
 	var ano = 2023;
 
-	document.write("Henrique tem: " + (ano - 2004) + " anos");
-	document.write("<br>");
-	document.write("Patolino tem " + (ano - 2000) + " anos");
-	document.write("<br>");
+	mostra("Henrique tem: " + (ano - 2004) + " anos");
+
+	pulaLinha();
+
+	mostra("Patolino tem " + (ano - 2000) + " anos");
+
+	pulaLinha();
 
 	ano = 2000;
-	document.write("Pernalonga tem " + (ano - 1900) + "anos");
+	mostra("Pernalonga tem " + (ano - 1900) + "anos");
 
 
 </script>

@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<input/>
+
+<button>Compare com o numero secreto</button>
+
+<script>
+var numSecreto = 5;
+
+var input = document.querySelector("input");
+
+function verifica(){
+    if(input.value == segredo){
+        alert("Voce acertou");
+
+    } else {
+        alert("Voce errou");
+
+    }
+}
+
+var button = document.querySelector("button");
+buttton.onclick = verifica;
+
+</script>

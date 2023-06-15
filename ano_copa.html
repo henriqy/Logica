@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha(){
+		document.write("<br>")
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		pulaLinha();
+	}
+
+	var limite = parseInt(prompt("Entre com o ano limite"));
+
+	var inicio = 1930;
+
+	while(inicio <= limite){
+
+		mostra("teve copa em " + inicio);
+		inicio = inicio + 4;
+
+	}
+
+	mostra("FIM");
+
+
+
+</script>

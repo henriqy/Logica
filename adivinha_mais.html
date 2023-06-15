@@ -5,33 +5,68 @@
 <button>Compare com o numero secreto</button>
 
 <script>
-var numSecreto = [5,7,10,2,3];
 
-var input = document.querySelector("input");
+    function sorteia(){
+        return Math.round(Math.random() * 10);
+
+    }
+
+    function sorteiaNumeros(quantidade){
+        var segredos = [];
+        var numero = 1;
+
+        while(numero <= quantidade){
+
+            var numeroAleatorio = sorteia();
+            var achou = false;
+
+            for(var posicao = 0; posicao < segredos.length; posicao++){
+                if(segredos[posicao] == numeroAleatorio){
+                    achou = true;
+                    break;
+                }
+            }
 
 
-function verifica(){
-    var achou = false;
-
-    for(var posicao =0; posicao < numSecreto.length; posicao++){
-
-        if(input.value == numSecreto){
-            alert("Voce acertou");
-            achou = true;
-            break;
+            if(achou == false){
+                segredos.push(sorteia());
+                numero++
+            }
 
         }
-    }
-    if(achou = false){
-        
-        alert("Voce errou");
+
+        return segredos;
     }
 
-    input.value = "";
-    input.focus();
-}
+    var segredos = sorteiaNumeros(3);
 
-var button = document.querySelector("button");
-button.onclick = verifica;
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+
+
+    function verifica(){
+        var achou = false;
+
+        for(var posicao =0; posicao < segredos.length; posicao++){
+
+            if(input.value == segredos){
+                alert("Voce acertou");
+                achou = true;
+                break;
+
+            }
+        }
+        if(achou = false){
+            
+            alert("Voce errou");
+        }
+
+        input.value = "";
+        input.focus();
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = verifica;
 
 </script>

@@ -5,17 +5,26 @@
 <button>Compare com o numero secreto</button>
 
 <script>
-var numSecreto = Math.round(Math.random() * 10);
+var numSecreto = [5,7,10,2,3];
 
 var input = document.querySelector("input");
 
+
 function verifica(){
-    if(input.value == numSecreto){
-        alert("Voce acertou");
+    var achou = false;
 
-    } else {
+    for(var posicao =0; posicao < numSecreto.length; posicao++){
+
+        if(input.value == numSecreto){
+            alert("Voce acertou");
+            achou = true;
+            break;
+
+        }
+    }
+    if(achou = false){
+        
         alert("Voce errou");
-
     }
 
     input.value = "";

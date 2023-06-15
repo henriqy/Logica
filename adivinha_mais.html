@@ -5,12 +5,12 @@
 <button>Compare com o numero secreto</button>
 
 <script>
-var numSecreto = 5;
+var numSecreto = Math.round(Math.random() * 10);
 
 var input = document.querySelector("input");
 
 function verifica(){
-    if(input.value == segredo){
+    if(input.value == numSecreto){
         alert("Voce acertou");
 
     } else {
@@ -23,6 +23,6 @@ function verifica(){
 }
 
 var button = document.querySelector("button");
-buttton.onclick = verifica;
+button.onclick = verifica;
 
 </script>
